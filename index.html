@@ -10,11 +10,23 @@
             font-family: 'Merriweather Sans', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #e0e0e0, #f8f8f8); /* Light gradient background */
-            color: #333; /* Dark gray for text */
+            background: linear-gradient(135deg, #1a1a1a, #2e2e2e); /* Dark background for contrast */
+            color: #fff; /* Light text color */
             line-height: 1.6;
             overflow-x: hidden;
+          display: flex;
+          justify-content: center;
         }
+      body::before{
+           content: '';
+          position: fixed;
+          top: 0;
+          left: 0;
+           right: 0;
+           bottom: 0;
+          background: radial-gradient(circle at center, rgba(150, 150, 150, 0.1), transparent 50%); /* Soft white gradient */
+          pointer-events: none;
+      }
 
        .container {
           width: 90%;
@@ -24,38 +36,59 @@
          position: relative;
          }
 
-
-       .glass-card {
-         background: rgba(255, 255, 255, 0.2);
-         border-radius: 16px;
-         box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-         backdrop-filter: blur(5px);
-         -webkit-backdrop-filter: blur(5px);
-          border: 1px solid rgba(255, 255, 255, 0.3);
-          padding: 30px;
-          margin-bottom: 30px;
-          transition: transform 0.3s ease, box-shadow 0.3s ease;
-          position: relative;
-          overflow: hidden; /* Clip the gradient inside the glass card */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            box-shadow: 0 4px 60px rgba(255, 255, 255, 0.1), 0 0 40px rgba(0, 0, 0, 0.05); /* Enhanced depth */
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
         }
+
         .glass-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 50px rgba(255, 255, 255, 0.2), 0 0 50px rgba(0, 0, 0, 0.1);
+
         }
 
-         .glass-card::before {
-           content: '';
+        /* Mirror Effect with Rainbow Shimmer */
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+           background: radial-gradient(circle at center, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 50%, transparent 70%);
+             filter: blur(30px);
+            pointer-events: none;
+           z-index: -1;
+           animation: rotateBackground 15s linear infinite;
+        }
+        .glass-card::after{
+            content: '';
           position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
+            top: 0;
+           left: 0;
+           right: 0;
            bottom: 0;
-           background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1));
-           z-index: 0; /* Ensure the gradient is behind the content */
-           pointer-events: none;
-           border-radius: 16px;
+            background: linear-gradient(135deg, rgba(255,0,0,0.05), rgba(0,255,0,0.05), rgba(0,0,255,0.05)); /* Rainbow Gradient */
+           opacity: 0.1;
+          mix-blend-mode: overlay;
+          border-radius: 16px;
+          pointer-events: none;
+          z-index: -1;
+         }
+       @keyframes rotateBackground {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
         }
-
 
          .header {
            text-align: center;
@@ -70,20 +103,20 @@
             margin-bottom: 10px;
            text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
              letter-spacing: 1.2px;
-           color: #333;
+           color: #fff;
 
            }
         .header h2 {
           font-size: 1.8em;
            font-weight: 400;
             margin-bottom: 20px;
-            color: #666;
+            color: #eee;
           text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
         }
 
         .header p {
           font-size: 1.2em;
-          color: #777;
+          color: #ddd;
         }
 
         .section h2 {
@@ -92,7 +125,7 @@
            padding-bottom: 10px;
            display: inline-block;
             position: relative;
-          color: #333;
+          color: #fff;
            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
           z-index: 1;
 
@@ -105,7 +138,7 @@
            bottom: 0;
            height: 3px;
            width: 60%;
-           background: linear-gradient(90deg, rgba(128,128,128,0.4) 10%, rgba(255,255,255,0.6) 50%, rgba(128,128,128,0.4) 90%); /* subtle reflective effect*/
+           background: linear-gradient(90deg, rgba(255,255,255,0.2) 10%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.2) 90%); /* subtle reflective effect*/
             border-radius: 2px;
             z-index: -1;
         }
@@ -115,7 +148,7 @@
            margin-bottom: 30px;
            overflow: hidden;
           z-index: 1;
-          color: #333;
+          color: #fff;
          }
 
 
@@ -144,12 +177,12 @@
           border-radius: 50%;
           object-fit: cover;
           margin-bottom: 15px;
-            border: 3px solid rgba(255, 255, 255, 0.7); /* Glass like border */
+            border: 3px solid rgba(255, 255, 255, 0.4); /* Glass like border */
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             transition: border 0.3s ease, box-shadow 0.3s ease;
         }
         .speaker-card img:hover, .sponsor-card img:hover {
-         border: 3px solid rgba(255, 255, 255, 0.9);
+         border: 3px solid rgba(255, 255, 255, 0.7);
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
@@ -159,7 +192,7 @@
          z-index: 1;
        }
        .schedule-table th, .schedule-table td {
-        border: 1px solid rgba(255, 255, 255, 0.4);
+        border: 1px solid rgba(255, 255, 255, 0.2);
         padding: 12px;
         text-align: left;
            transition: background-color 0.3s ease;
@@ -168,13 +201,13 @@
        .schedule-table th {
           background-color: rgba(255, 255, 255, 0.1);
            text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-           color: #444;
+           color: #eee;
         }
        .schedule-table tr:nth-child(odd) {
-           background-color: rgba(255, 255, 255, 0.05); /* Slight visual separation */
+           background-color: rgba(255, 255, 255, 0.03); /* Slight visual separation */
          }
         .schedule-table tr:hover {
-          background-color: rgba(255, 255, 255, 0.15); /* Subtle hover effect */
+          background-color: rgba(255, 255, 255, 0.1); /* Subtle hover effect */
         }
 
 
@@ -198,14 +231,14 @@
          box-shadow: 0 8px 20px rgba(0,0,0,0.2);
        }
        .venue-section a{
-           color: #4285f4;
+           color: #81d4fa;
           text-decoration: none;
           font-weight: 500;
            transition: color 0.3s ease;
        }
        .venue-section a:hover{
            text-decoration: underline;
-         color: #0d47a1;
+         color: #03a9f4;
         }
          .footer {
              text-align: center;
@@ -228,7 +261,7 @@
       .presented-by{
          text-align: center;
          margin-bottom: 30px;
-        color: #555;
+        color: #999;
          z-index: 1;
        }
     </style>
