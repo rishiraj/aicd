@@ -3,22 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Favicons from Google I/O -->
+    <link rel="icon" href="https://io.google/2024/app/images/favicon.ico" sizes="any">
+    <link rel="icon" type="image/svg+xml" href="https://io.google/2024/app/images/favicon-grey-16x16.svg" sizes="16x16">
+    <link rel="icon" type="image/svg+xml" href="https://io.google/2024/app/images/favicon-grey-32x32.svg" sizes="32x32">
+    <link rel="icon" type="image/svg+xml" href="https://io.google/2024/app/images/favicon-grey-96x96.svg" sizes="96x96">
+    <link rel="icon" type="image/png" href="https://io.google/2024/app/images/favicon-android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="https://io.google/2024/app/images/favicon-android-chrome-512x512.png" sizes="512x512">
+    <link rel="icon" type="image/png" href="https://io.google/2024/app/images/favicon-apple-touch-icon-180x180.png" sizes="180x180">
+
     <title>AI Community Day - Coming Soon in March 2025</title>
     <style>
-        /* Material Design Inspired Styles with Merriweather Sans, Modified Theme */
-        @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;700&display=swap');
-
-        body {
-            font-family: 'Merriweather Sans', sans-serif;
+       /* Reset and default styles inspired by Google I/O */
+       body, html {
+            background: #1a1a1a;
+            color: #fff;
+            height: 100%;
             margin: 0;
             padding: 0;
-            background-color: #1a1a1a; /* Dark Background */
-            color: #fff; /* White Text */
-            line-height: 1.6;
-            overflow-x: hidden; /* Prevent horizontal scrolling */
-             text-align: center; /* Center align text initially */
+            width: 100%;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
+        body,
+        html,
+        h1, h2, h3, h4, h5, h6,
+        p, div {
+            font-family: 'Google Sans', sans-serif; /* Using Google Sans as requested */
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Layout Styles */
         .container {
             width: 90%;
             max-width: 1200px;
@@ -27,6 +47,7 @@
              
         }
 
+        /* Typography */
         h1, h2, h3 {
             font-weight: 700;
             margin-bottom: 20px;
@@ -50,23 +71,20 @@
              margin-bottom: 20px;
              
          }
-         
+
+        /* Section styles (using dark theme from Google I/O as base) */
          section{
              position: relative;
              overflow: hidden;
-         }
-
-        section {
-            margin-bottom: 40px;
+              margin-bottom: 40px;
             padding: 30px;
             background-color: #2a2a2a; /* Dark Section Background */
             border-radius: 15px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
              transition: transform 0.3s ease, box-shadow 0.3s ease;
          }
-        
-       
-         section::before {
+         
+          section::before {
             content: '';
             position: absolute;
             top: 0;
@@ -88,17 +106,19 @@
                transform: scale(1.1);
          }
 
-        .hero {
-            background-color: #ffc107; /* Yellow Hero Background */
-            color: #1a1a1a; /* Dark Text on Yellow */
+
+       /* Hero section */
+         .hero {
+             background-color: #ffc107;
+            color: #1a1a1a;
             text-align: center;
-            padding: 80px 0;
+             padding: 80px 0;
             border-radius: 0 0 30px 30px;
             margin-bottom: 30px;
              position: relative;
             overflow: hidden;
-        }
-        
+             }
+         
          .hero::before{
             content: '';
             position: absolute;
@@ -122,9 +142,10 @@
             font-size: 1.2rem;
          }
 
+         /* Button Styles */
         .btn {
             display: inline-block;
-            background-color: #1a1a1a; /* Black Button */
+             background-color: #1a1a1a; /* Black Button */
             color: #ffc107; /* Yellow Button Text */
             padding: 10px 20px;
             text-decoration: none;
@@ -137,11 +158,12 @@
         }
 
         .btn:hover {
-            background-color: #ffc107; /* Yellow Button on Hover */
+             background-color: #ffc107; /* Yellow Button on Hover */
             color: #1a1a1a; /* Black Text on Hover */
             border-color: #1a1a1a;
         }
 
+        /* Speaker and Sponsor grids */
         .speaker-grid, .sponsor-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -151,11 +173,10 @@
 
         .speaker, .sponsor {
             text-align: center;
-             
         }
 
         .speaker img, .sponsor img {
-            width: 100%;
+             width: 100%;
             max-width: 150px;
             height: auto;
             border-radius: 50%;
@@ -163,14 +184,14 @@
             box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s ease;
               filter: grayscale(20%);
-            
         }
-         .speaker img:hover, .sponsor img:hover{
+
+          .speaker img:hover, .sponsor img:hover{
             transform: scale(1.1);
             filter: grayscale(0%);
            
         }
-         
+
          .speaker h3, .sponsor h3 {
               margin: 10px 0;
          }
@@ -182,56 +203,55 @@
              
          }
 
-        .schedule-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-            
-        }
 
-        .schedule-table th, .schedule-table td {
+        /* Schedule Table */
+         .schedule-table {
+             width: 100%;
+             border-collapse: collapse;
+            margin-bottom: 20px;
+         }
+
+         .schedule-table th, .schedule-table td {
             border: 1px solid #444;
             padding: 10px;
-            text-align: left;
+             text-align: left;
         }
-
-        .schedule-table th {
+         .schedule-table th {
             background-color: #333;
-             
         }
 
-        .venue-info {
-            display: flex;
+       /* Venue section */
+         .venue-info {
+             display: flex;
             flex-wrap: wrap;
             align-items: center;
             gap: 20px;
-             
-        }
+         }
 
-        .venue-info img {
-             width: 100%;
+         .venue-info img {
+            width: 100%;
             max-width: 300px;
              height: auto;
             border-radius: 10px;
             box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);
-        }
+         }
 
-        .venue-details {
+         .venue-details {
             flex: 1;
-              text-align: left;
+            text-align: left;
         }
-        
-         .venue-details a{
+          .venue-details a{
              color: #ffc107;
              text-decoration: none;
          }
           .venue-details a:hover{
              text-decoration: underline;
           }
+        /* Call to action section */
         .call-to-actions {
             text-align: center;
             margin-top: 40px;
-        }
+         }
          
         .call-to-actions a{
             margin: 0 10px;
@@ -245,13 +265,12 @@
               text-decoration: underline;
              color: #fff;
          }
-        
+         /* Google Logo style */
          .google-logo{
              width: 150px;
              height: auto;
               margin: 20px auto;
          }
-        
         /* Animate On Scroll */
         .fade-in {
             opacity: 0;
@@ -266,7 +285,7 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
-            .container {
+             .container {
                 width: 95%;
                 padding: 10px 0;
             }
@@ -281,13 +300,12 @@
             .venue-info {
                 flex-direction: column;
                 align-items: flex-start;
-                 
             }
-             .venue-info img{
-                max-width: 100%;
+            .venue-info img{
+                 max-width: 100%;
             }
               .hero{
-                padding: 40px 0;
+                 padding: 40px 0;
               }
               .hero h1{
                   font-size: 2rem;
@@ -297,6 +315,22 @@
               }
         }
     </style>
+     <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin />
+    <link rel="preconnect" href="https://storage.googleapis.com"/>
+    <link rel="preconnect" href="https://apis.google.com"/>
+    <link rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/icon?family=Google+Sans:400,500%7CGoogle+Sans+Display:400,500%7CGoogle+Sans+Text:400|Roboto:400,500|Roboto+Mono:400&display=swap"  />
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Google+Sans:400,500%7CGoogle+Sans+Display:400,500%7CGoogle+Sans+Text:400|Roboto:400,500|Roboto+Mono:400&display=swap"
+   />
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Google+Sans+Text:wght@400&family=Google+Sans:wght@500&display=swap" as="style" >
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans+Text:wght@400&family=Google+Sans:wght@500&display=swap" >
+
 </head>
 <body>
     <div class="hero">
@@ -443,8 +477,11 @@
             <a href="#">Call for Sponsors</a>
         </div>
     </div>
-
-    <script>
+    
+    
+    
+    
+      <script>
       function handleScroll() {
             const elements = document.querySelectorAll('.fade-in');
             elements.forEach(el => {
