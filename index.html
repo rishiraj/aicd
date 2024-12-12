@@ -5,17 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Community Day - Coming Soon in March 2025</title>
     <style>
-        /* Material Design Inspired Styles with Merriweather Sans */
+        /* Material Design Inspired Styles with Merriweather Sans, Modified Theme */
         @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;700&display=swap');
 
         body {
             font-family: 'Merriweather Sans', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
-            color: #333;
+            background-color: #1a1a1a; /* Dark Background */
+            color: #fff; /* White Text */
             line-height: 1.6;
             overflow-x: hidden; /* Prevent horizontal scrolling */
+             text-align: center; /* Center align text initially */
         }
 
         .container {
@@ -23,12 +24,13 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px 0;
+             
         }
 
         h1, h2, h3 {
             font-weight: 700;
             margin-bottom: 20px;
-            color: #2c3e50;
+            color: #fff; /* White Headings */
         }
 
         h1 {
@@ -43,51 +45,74 @@
             font-size: 1.5rem;
         }
         
-         p{
+        p{
              font-size: 1rem;
              margin-bottom: 20px;
+             
          }
-        
+         
+         section{
+             position: relative;
+             overflow: hidden;
+         }
 
         section {
             margin-bottom: 40px;
             padding: 30px;
-            background-color: white;
+            background-color: #2a2a2a; /* Dark Section Background */
             border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s ease; /* For hover animation */
-        }
-
-        section:hover{
-             transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+             transition: transform 0.3s ease, box-shadow 0.3s ease;
          }
-
-        .hero {
-            background-color: #3498db;
-            color: white;
-            text-align: center;
-             padding: 80px 0;
-            border-radius: 0 0 30px 30px;
-            margin-bottom: 30px;
-            position: relative;
-            overflow: hidden;
-            
-        }
-        .hero::before{
-           content: '';
+        
+       
+         section::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), transparent);
-           z-index: 0;
-            
+            background: radial-gradient(circle, rgba(255, 215, 0, 0.15), transparent 30%); /* Subtle sparkle */
+            z-index: 0;
+            pointer-events: none;
+             transition: transform 0.3s ease;
         }
         
-        .hero *{
-            z-index: 1;
+         section:hover{
+              transform: translateY(-5px);
+             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+         }
+        
+         section:hover::before{
+               transform: scale(1.1);
+         }
+
+        .hero {
+            background-color: #ffc107; /* Yellow Hero Background */
+            color: #1a1a1a; /* Dark Text on Yellow */
+            text-align: center;
+            padding: 80px 0;
+            border-radius: 0 0 30px 30px;
+            margin-bottom: 30px;
+             position: relative;
+            overflow: hidden;
         }
+        
+         .hero::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+             background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), transparent);
+            z-index: 0;
+        }
+
+        .hero *{
+           z-index: 1;
+         }
 
         .hero h1 {
             margin-bottom: 10px;
@@ -95,35 +120,38 @@
         
         .hero p{
             font-size: 1.2rem;
-        }
-       
+         }
 
         .btn {
             display: inline-block;
-            background-color: #e67e22;
-            color: white;
+            background-color: #1a1a1a; /* Black Button */
+            color: #ffc107; /* Yellow Button Text */
             padding: 10px 20px;
             text-decoration: none;
             border-radius: 5px;
             margin-top: 20px;
-             transition: background-color 0.3s ease;
-             border: none;
-             font-size: 1rem;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            border: 2px solid #ffc107;
+            font-size: 1rem;
              cursor: pointer;
         }
-        
-        .btn:hover{
-             background-color: #d35400;
-         }
+
+        .btn:hover {
+            background-color: #ffc107; /* Yellow Button on Hover */
+            color: #1a1a1a; /* Black Text on Hover */
+            border-color: #1a1a1a;
+        }
 
         .speaker-grid, .sponsor-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
             gap: 20px;
+             text-align: center; /* Center speaker and sponsor content */
         }
 
         .speaker, .sponsor {
             text-align: center;
+             
         }
 
         .speaker img, .sponsor img {
@@ -132,89 +160,115 @@
             height: auto;
             border-radius: 50%;
             margin-bottom: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);
             transition: transform 0.3s ease;
+              filter: grayscale(20%);
             
         }
-        .speaker img:hover, .sponsor img:hover{
-              transform: scale(1.1);
-          }
+         .speaker img:hover, .sponsor img:hover{
+            transform: scale(1.1);
+            filter: grayscale(0%);
+           
+        }
+         
+         .speaker h3, .sponsor h3 {
+              margin: 10px 0;
+         }
+         .speaker span {
+             display: block;
+             font-size: 0.9rem;
+             color: #ddd; /* Lighter designation */
+             margin-top: 5px;
+             
+         }
 
         .schedule-table {
             width: 100%;
             border-collapse: collapse;
-             margin-bottom: 20px;
+            margin-bottom: 20px;
+            
         }
 
         .schedule-table th, .schedule-table td {
-             border: 1px solid #ddd;
+            border: 1px solid #444;
             padding: 10px;
             text-align: left;
         }
-         .schedule-table th{
-             background-color: #f2f2f2;
-         }
+
+        .schedule-table th {
+            background-color: #333;
+             
+        }
 
         .venue-info {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             gap: 20px;
+             
         }
 
         .venue-info img {
-            width: 100%;
+             width: 100%;
             max-width: 300px;
              height: auto;
             border-radius: 10px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 3px 7px rgba(0, 0, 0, 0.5);
         }
 
         .venue-details {
             flex: 1;
+              text-align: left;
         }
         
          .venue-details a{
-             color: #3498db;
+             color: #ffc107;
              text-decoration: none;
-             
          }
-         .venue-details a:hover{
+          .venue-details a:hover{
              text-decoration: underline;
-         }
+          }
         .call-to-actions {
             text-align: center;
             margin-top: 40px;
         }
-        
+         
         .call-to-actions a{
             margin: 0 10px;
             display: inline-block;
              text-decoration: none;
-             color: #3498db;
-         }
+             color: #ffc107;
+              transition: color 0.3s ease;
+        }
         
         .call-to-actions a:hover{
-            text-decoration: underline;
-        }
-          
+              text-decoration: underline;
+             color: #fff;
+         }
+        
+         .google-logo{
+             width: 150px;
+             height: auto;
+              margin: 20px auto;
+         }
+        
         /* Animate On Scroll */
         .fade-in {
             opacity: 0;
             transform: translateY(20px);
-            transition: opacity 0.5s ease, transform 0.5s ease;
+             transition: opacity 0.5s ease, transform 0.5s ease;
         }
 
         .fade-in.visible {
             opacity: 1;
             transform: translateY(0);
-        }
+         }
 
         /* Responsive Design */
         @media (max-width: 768px) {
             .container {
                 width: 95%;
-                 padding: 10px 0;
+                padding: 10px 0;
             }
 
             h1 {
@@ -224,10 +278,10 @@
             h2 {
                 font-size: 1.7rem;
             }
-
             .venue-info {
                 flex-direction: column;
                 align-items: flex-start;
+                 
             }
              .venue-info img{
                 max-width: 100%;
@@ -250,15 +304,15 @@
             <h1>AI Community Day</h1>
             <p>Coming Soon in March, 2025</p>
             <p>The Biggest Technical AI conference in India.</p>
-             <a href="#" class="btn">Register Your Interest For 2025!</a>
+            <a href="#" class="btn">Register Your Interest For 2025!</a>
             <p>Ditching the hype and buzzwords, AI Community Day celebrates our 2nd year of transforming theoretical discussions into practical and profitable applications. This is where commercial AI comes to life.</p>
         </div>
     </div>
-    <div class="container">
+     <div class="container">
         
           <section class="fade-in">
                <p>It is where the leading AI companies, AI founders, VPs of AI & AI Engineers meet. Featuring an Expo floor showcasing 5+ companies pioneering the AI Engineering landscape, and over 10+ speakers delivering talks and workshops across 2 tracks (Theory & Practical).</p>
-              <p>Presented By: Google for Developers</p>
+              <img src="https://storage.googleapis.com/developers-qwiklab-resources/images/gdev-logo.png" alt="Google for Developers Logo" class="google-logo">
           </section>
          
          <section class="fade-in">
@@ -267,22 +321,27 @@
                 <div class="speaker">
                     <img src="https://placekitten.com/150/150" alt="Speaker 1">
                     <h3>Speaker 1</h3>
+                    <span>AI Researcher</span>
                 </div>
                 <div class="speaker">
                     <img src="https://placekitten.com/151/151" alt="Speaker 2">
                     <h3>Speaker 2</h3>
+                    <span>Tech Lead</span>
                 </div>
                 <div class="speaker">
                      <img src="https://placekitten.com/152/152" alt="Speaker 3">
                     <h3>Speaker 3</h3>
+                    <span>Founder & CEO</span>
                 </div>
-                 <div class="speaker">
+                <div class="speaker">
                     <img src="https://placekitten.com/153/153" alt="Speaker 4">
                     <h3>Speaker 4</h3>
+                     <span>Principal Engineer</span>
                 </div>
-                 <div class="speaker">
+                <div class="speaker">
                     <img src="https://placekitten.com/154/154" alt="Speaker 5">
                     <h3>Speaker 5</h3>
+                     <span>AI Consultant</span>
                 </div>
                 
             </div>
@@ -304,7 +363,7 @@
                         <td>Registration & Breakfast</td>
                         <td>Registration & Breakfast</td>
                     </tr>
-                     <tr>
+                    <tr>
                         <td>10:00 AM</td>
                          <td>Opening Keynote</td>
                         <td>Workshop 1</td>
@@ -344,7 +403,7 @@
             <div class="sponsor-grid">
                 <div class="sponsor">
                      <img src="https://placekitten.com/150/100" alt="Sponsor 1">
-                   <h3>Sponsor 1</h3>
+                    <h3>Sponsor 1</h3>
                 </div>
                 <div class="sponsor">
                      <img src="https://placekitten.com/151/100" alt="Sponsor 2">
@@ -360,7 +419,7 @@
                 </div>
                    <div class="sponsor">
                      <img src="https://placekitten.com/154/100" alt="Sponsor 5">
-                     <h3>Sponsor 5</h3>
+                    <h3>Sponsor 5</h3>
                 </div>
             </div>
         </section>
@@ -377,9 +436,9 @@
                  </div>
             </div>
         </section>
-        
+         
         <div class="call-to-actions">
-             <a href="#">Call for Speakers</a>
+            <a href="#">Call for Speakers</a>
             <a href="#">Call for Volunteers</a>
             <a href="#">Call for Sponsors</a>
         </div>
