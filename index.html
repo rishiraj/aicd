@@ -3,401 +3,401 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Community Day | March 2025</title>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <title>AI Community Day - Coming Soon in March 2025</title>
     <style>
+        /* Material Design Inspired Styles with Merriweather Sans */
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;700&display=swap');
+
         body {
             font-family: 'Merriweather Sans', sans-serif;
             margin: 0;
             padding: 0;
-             background: linear-gradient(135deg, #1a1a1a, #333333); /* Darker background */
-            color: #ffffff; /* Light text for dark background */
+            background-color: #f8f9fa;
+            color: #333;
             line-height: 1.6;
-            overflow-x: hidden;
+            overflow-x: hidden; /* Prevent horizontal scrolling */
         }
 
-       .container {
-          width: 90%;
-          max-width: 1200px;
-          margin: 0 auto;
-          padding: 20px 0;
-         position: relative;
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+
+        h1, h2, h3 {
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #2c3e50;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+        }
+
+        h3 {
+            font-size: 1.5rem;
+        }
+        
+         p{
+             font-size: 1rem;
+             margin-bottom: 20px;
+         }
+        
+
+        section {
+            margin-bottom: 40px;
+            padding: 30px;
+            background-color: white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease; /* For hover animation */
+        }
+
+        section:hover{
+             transform: translateY(-5px);
          }
 
-        .glass-card {
-           background: rgba(255, 255, 255, 0.1);
-            border-radius: 16px;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-             -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            padding: 30px;
+        .hero {
+            background-color: #3498db;
+            color: white;
+            text-align: center;
+             padding: 80px 0;
+            border-radius: 0 0 30px 30px;
             margin-bottom: 30px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
             position: relative;
             overflow: hidden;
-            z-index: 1; /* Ensures content is above shimmers */
+            
         }
-        .glass-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.4);
-        }
-
-         .glass-card::before {
+        .hero::before{
            content: '';
-          position: absolute;
-            top: -50%;
-             left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.05), transparent);
-           pointer-events: none;
-           border-radius: 50%;
-             z-index: -1;
-
-           animation: shimmer 4s linear infinite;
-         }
-         .glass-card::after {
-           content: '';
-           position: absolute;
-           top: -10%;
-           left: -10%;
-          width: 120%;
-            height: 120%;
-          background: linear-gradient(
-           45deg,
-              rgba(255, 0, 0, 0.08),
-             rgba(255, 165, 0, 0.08),
-              rgba(255, 255, 0, 0.08),
-               rgba(0, 255, 0, 0.08),
-            rgba(0, 0, 255, 0.08),
-              rgba(75, 0, 130, 0.08),
-             rgba(128, 0, 128, 0.08)
-           );
-           border-radius: 16px;
-            z-index: -2; /* Keep it behind the base gradient */
-            pointer-events: none;
-
-          animation: rainbowShimmer 5s linear infinite;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), transparent);
+           z-index: 0;
+            
+        }
+        
+        .hero *{
+            z-index: 1;
         }
 
-
-         @keyframes shimmer{
-           0% {transform: rotate(0deg)}
-           100%{transform: rotate(360deg)}
-         }
-         @keyframes rainbowShimmer{
-           0% {transform: translate(-5%,-5%) rotate(0deg)}
-           100%{transform: translate(5%,5%) rotate(360deg)}
-         }
-
-
-         .header {
-           text-align: center;
-          margin-bottom: 30px;
-          position: relative;
-         z-index: 1;
-       }
-
-        .header h1 {
-            font-size: 3em;
-           font-weight: bold;
+        .hero h1 {
             margin-bottom: 10px;
-           text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-             letter-spacing: 1.2px;
-           color: #fff;
-           text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-           }
-        .header h2 {
-          font-size: 1.8em;
-           font-weight: 400;
-            margin-bottom: 20px;
-            color: #ddd;
-          text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
         }
-
-        .header p {
-          font-size: 1.2em;
-          color: #aaa;
+        
+        .hero p{
+            font-size: 1.2rem;
         }
+       
 
-        .section h2 {
-           font-size: 2.2em;
-           margin-bottom: 25px;
-           padding-bottom: 10px;
-           display: inline-block;
-            position: relative;
-          color: #fff;
-           text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-          z-index: 1;
-
-       }
-
-         .section h2::after{
-           content: '';
-           position: absolute;
-           left: 0;
-           bottom: 0;
-           height: 3px;
-           width: 60%;
-          background: linear-gradient(90deg, rgba(255,255,255,0.2) 10%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0.2) 90%);
-            border-radius: 2px;
-            z-index: -1;
+        .btn {
+            display: inline-block;
+            background-color: #e67e22;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+             transition: background-color 0.3s ease;
+             border: none;
+             font-size: 1rem;
+             cursor: pointer;
         }
-        .section {
-          position: relative;
-          padding: 40px;
-           margin-bottom: 30px;
-           overflow: hidden;
-          z-index: 1;
-          color: #fff;
+        
+        .btn:hover{
+             background-color: #d35400;
          }
-
 
         .speaker-grid, .sponsor-grid {
-           display: grid;
-           grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 25px;
-           z-index: 1;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
         }
-       .speaker-card, .sponsor-card {
-         text-align: center;
-           padding: 20px;
-            border-radius: 12px;
+
+        .speaker, .sponsor {
+            text-align: center;
+        }
+
+        .speaker img, .sponsor img {
+            width: 100%;
+            max-width: 150px;
+            height: auto;
+            border-radius: 50%;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
             transition: transform 0.3s ease;
-             position: relative;
-          z-index: 1;
-            background: rgba(255, 255, 255, 0.05);
-          box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-       }
-        .speaker-card:hover, .sponsor-card:hover{
-          transform: scale(1.05);
-          box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            
+        }
+        .speaker img:hover, .sponsor img:hover{
+              transform: scale(1.1);
+          }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+             margin-bottom: 20px;
         }
 
-
-        .speaker-card img, .sponsor-card img {
-           width: 120px;
-          height: 120px;
-          border-radius: 50%;
-          object-fit: cover;
-          margin-bottom: 15px;
-            border: 3px solid rgba(255, 255, 255, 0.3);
-          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-            transition: border 0.3s ease, box-shadow 0.3s ease;
+        .schedule-table th, .schedule-table td {
+             border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
         }
-        .speaker-card img:hover, .sponsor-card img:hover {
-         border: 3px solid rgba(255, 255, 255, 0.6);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-        }
-
-       .schedule-table {
-          width: 100%;
-           border-collapse: collapse;
-         z-index: 1;
-       }
-       .schedule-table th, .schedule-table td {
-         border: 1px solid rgba(255, 255, 255, 0.1);
-        padding: 12px;
-        text-align: left;
-           transition: background-color 0.3s ease;
-           }
-
-       .schedule-table th {
-          background-color: rgba(255, 255, 255, 0.05);
-           text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
-           color: #ddd;
-        }
-       .schedule-table tr:nth-child(odd) {
-           background-color: rgba(255, 255, 255, 0.02); /* Slight visual separation */
+         .schedule-table th{
+             background-color: #f2f2f2;
          }
-        .schedule-table tr:hover {
-          background-color: rgba(255, 255, 255, 0.08); /* Subtle hover effect */
+
+        .venue-info {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 20px;
         }
 
-
-       .venue-section {
-           display: grid;
-           grid-template-columns: 1fr 1fr;
-           gap: 30px;
-          align-items: center;
-          z-index: 1;
-          position: relative;
-        }
-        .venue-section img {
-           width: 100%;
-           border-radius: 12px;
-           object-fit: cover;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.4);
-            transition: box-shadow 0.3s ease;
+        .venue-info img {
+            width: 100%;
+            max-width: 300px;
+             height: auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
         }
 
-        .venue-section img:hover {
-         box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-       }
-       .venue-section a{
-           color: #4285f4;
-          text-decoration: none;
-          font-weight: 500;
-           transition: color 0.3s ease;
-       }
-       .venue-section a:hover{
-           text-decoration: underline;
-         color: #81d4fa;
+        .venue-details {
+            flex: 1;
         }
-         .footer {
-             text-align: center;
-            padding: 20px;
-             background-color: rgba(0,0,0,0.95);
-           color: white;
-            position: relative;
-          z-index: 10;
+        
+         .venue-details a{
+             color: #3498db;
+             text-decoration: none;
+             
          }
-         .footer a {
-           color: #81d4fa;
-          text-decoration: none;
+         .venue-details a:hover{
+             text-decoration: underline;
+         }
+        .call-to-actions {
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .call-to-actions a{
             margin: 0 10px;
-          transition: color 0.3s ease;
+            display: inline-block;
+             text-decoration: none;
+             color: #3498db;
          }
-         .footer a:hover {
+        
+        .call-to-actions a:hover{
             text-decoration: underline;
-           color: #03a9f4;
-       }
-      .presented-by{
-         text-align: center;
-         margin-bottom: 30px;
-         color: #aaa;
-         z-index: 1;
-       }
+        }
+          
+        /* Animate On Scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+                 padding: 10px 0;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.7rem;
+            }
+
+            .venue-info {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+             .venue-info img{
+                max-width: 100%;
+            }
+              .hero{
+                padding: 40px 0;
+              }
+              .hero h1{
+                  font-size: 2rem;
+              }
+              .hero p{
+                  font-size: 1rem;
+              }
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-         <div class="header glass-card">
+    <div class="hero">
+        <div class="container">
             <h1>AI Community Day</h1>
-            <h2>The Biggest Technical AI Conference in India</h2>
-            <p>Coming Soon in March 2025</p>
+            <p>Coming Soon in March, 2025</p>
+            <p>The Biggest Technical AI conference in India.</p>
+             <a href="#" class="btn">Register Your Interest For 2025!</a>
+            <p>Ditching the hype and buzzwords, AI Community Day celebrates our 2nd year of transforming theoretical discussions into practical and profitable applications. This is where commercial AI comes to life.</p>
         </div>
-        <div class="presented-by">
-           Presented By: Google for Developers
-        </div>
-        <div class="section glass-card">
-            <h2>About AI Community Day</h2>
-            <p>
-                AI Community Day is the flagship event of Machine Learning Kolkata. It is where the leading AI companies, AI founders, VPs of AI & AI Engineers meet. Featuring an Expo floor showcasing 5+ companies pioneering the AI Engineering landscape, and over 10+ speakers delivering talks and workshops across 2 tracks (Theory & Practical).
-            </p>
-        </div>
-        <div class="section glass-card">
-          <h2>Speakers</h2>
-          <div class="speaker-grid">
-             <div class="speaker-card">
-               <img src="placeholder-speaker.png" alt="Speaker 1">
-               <h3>Speaker 1</h3>
-               <p>Designation</p>
-             </div>
-            <div class="speaker-card">
-              <img src="placeholder-speaker.png" alt="Speaker 2">
-              <h3>Speaker 2</h3>
-              <p>Designation</p>
-            </div>
-            <div class="speaker-card">
-              <img src="placeholder-speaker.png" alt="Speaker 3">
-              <h3>Speaker 3</h3>
-              <p>Designation</p>
-            </div>
-            <div class="speaker-card">
-              <img src="placeholder-speaker.png" alt="Speaker 4">
-              <h3>Speaker 4</h3>
-              <p>Designation</p>
-            </div>
-          </div>
-        </div>
-        <div class="section glass-card">
-           <h2>Schedule</h2>
-            <table class="schedule-table">
-              <thead>
-                 <tr>
-                    <th>Time</th>
-                    <th>Track 1: Theory</th>
-                    <th>Track 2: Practical</th>
-                 </tr>
-              </thead>
-              <tbody>
-                 <tr>
-                   <td>9:00 AM - 10:00 AM</td>
-                    <td>Registration</td>
-                    <td>Registration</td>
-                 </tr>
-                  <tr>
-                    <td>10:00 AM - 11:00 AM</td>
-                    <td>Keynote Speaker 1</td>
-                   <td>Workshop 1</td>
-                 </tr>
-                <tr>
-                   <td>11:00 AM - 12:00 PM</td>
-                    <td>Talk 1</td>
-                    <td>Workshop 2</td>
-                </tr>
-                <tr>
-                   <td>12:00 PM - 1:00 PM</td>
-                  <td colspan="2">Lunch Break</td>
-                 </tr>
-                <tr>
-                   <td>1:00 PM - 2:00 PM</td>
-                    <td>Talk 2</td>
-                    <td>Workshop 3</td>
-                </tr>
-                 <tr>
-                   <td>2:00 PM - 3:00 PM</td>
-                     <td>Talk 3</td>
-                    <td>Workshop 4</td>
-                 </tr>
-                  <tr>
-                   <td>3:00 PM - 4:00 PM</td>
-                    <td>Panel Discussion</td>
-                    <td>Closing Session</td>
-                  </tr>
-               </tbody>
-             </table>
-        </div>
-       <div class="section glass-card">
-           <h2>Sponsors</h2>
-           <div class="sponsor-grid">
-              <div class="sponsor-card">
-                <img src="placeholder-sponsor.png" alt="Sponsor 1">
-                <h3>Sponsor 1</h3>
-              </div>
-               <div class="sponsor-card">
-                <img src="placeholder-sponsor.png" alt="Sponsor 2">
-                <h3>Sponsor 2</h3>
-              </div>
-             <div class="sponsor-card">
-                <img src="placeholder-sponsor.png" alt="Sponsor 3">
-                <h3>Sponsor 3</h3>
-              </div>
-           </div>
-        </div>
-        <div class="section glass-card">
-           <h2>Venue</h2>
-          <div class="venue-section">
-               <img src="placeholder-venue.png" alt="Venue Image">
-               <div>
-                  <p>
-                      <b>Location:</b> Placeholder Venue Address, City, State
-                  </p>
-                  <p>
-                      A modern conference facility, ideal for hosting technology conferences.
-                     <br> <a href="https://www.google.com/maps" target="_blank">View on Google Maps</a>
-                  </p>
-               </div>
-          </div>
-       </div>
     </div>
-    <footer class="footer">
-       <a href="#">Call for Speakers</a> |
-       <a href="#">Call for Volunteers</a> |
-        <a href="#">Call for Sponsors</a>
-       <p>© 2024 AI Community Day. All rights reserved.</p>
-   </footer>
+    <div class="container">
+        
+          <section class="fade-in">
+               <p>It is where the leading AI companies, AI founders, VPs of AI & AI Engineers meet. Featuring an Expo floor showcasing 5+ companies pioneering the AI Engineering landscape, and over 10+ speakers delivering talks and workshops across 2 tracks (Theory & Practical).</p>
+              <p>Presented By: Google for Developers</p>
+          </section>
+         
+         <section class="fade-in">
+            <h2>Past Speakers</h2>
+            <div class="speaker-grid">
+                <div class="speaker">
+                    <img src="https://placekitten.com/150/150" alt="Speaker 1">
+                    <h3>Speaker 1</h3>
+                </div>
+                <div class="speaker">
+                    <img src="https://placekitten.com/151/151" alt="Speaker 2">
+                    <h3>Speaker 2</h3>
+                </div>
+                <div class="speaker">
+                     <img src="https://placekitten.com/152/152" alt="Speaker 3">
+                    <h3>Speaker 3</h3>
+                </div>
+                 <div class="speaker">
+                    <img src="https://placekitten.com/153/153" alt="Speaker 4">
+                    <h3>Speaker 4</h3>
+                </div>
+                 <div class="speaker">
+                    <img src="https://placekitten.com/154/154" alt="Speaker 5">
+                    <h3>Speaker 5</h3>
+                </div>
+                
+            </div>
+        </section>
+
+        <section class="fade-in">
+            <h2>Schedule</h2>
+            <table class="schedule-table">
+                <thead>
+                    <tr>
+                        <th>Time</th>
+                        <th>Track 1 - Theory</th>
+                        <th>Track 2 - Practical</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>9:00 AM</td>
+                        <td>Registration & Breakfast</td>
+                        <td>Registration & Breakfast</td>
+                    </tr>
+                     <tr>
+                        <td>10:00 AM</td>
+                         <td>Opening Keynote</td>
+                        <td>Workshop 1</td>
+                    </tr>
+                    <tr>
+                        <td>11:00 AM</td>
+                        <td>Talk 1</td>
+                        <td>Workshop 2</td>
+                    </tr>
+                    <tr>
+                        <td>1:00 PM</td>
+                        <td colspan="2">Lunch Break</td>
+                    </tr>
+                    <tr>
+                        <td>2:00 PM</td>
+                        <td>Talk 2</td>
+                        <td>Workshop 3</td>
+                    </tr>
+                    <tr>
+                        <td>3:30 PM</td>
+                         <td>Talk 3</td>
+                         <td>Workshop 4</td>
+                     </tr>
+                      <tr>
+                        <td>5:00 PM</td>
+                         <td>Closing</td>
+                        <td>Closing</td>
+                     </tr>
+                    
+                </tbody>
+            </table>
+           
+        </section>
+
+        <section class="fade-in">
+            <h2>Past Sponsors</h2>
+            <div class="sponsor-grid">
+                <div class="sponsor">
+                     <img src="https://placekitten.com/150/100" alt="Sponsor 1">
+                   <h3>Sponsor 1</h3>
+                </div>
+                <div class="sponsor">
+                     <img src="https://placekitten.com/151/100" alt="Sponsor 2">
+                     <h3>Sponsor 2</h3>
+                </div>
+                 <div class="sponsor">
+                     <img src="https://placekitten.com/152/100" alt="Sponsor 3">
+                     <h3>Sponsor 3</h3>
+                </div>
+                  <div class="sponsor">
+                     <img src="https://placekitten.com/153/100" alt="Sponsor 4">
+                     <h3>Sponsor 4</h3>
+                </div>
+                   <div class="sponsor">
+                     <img src="https://placekitten.com/154/100" alt="Sponsor 5">
+                     <h3>Sponsor 5</h3>
+                </div>
+            </div>
+        </section>
+
+         <section class="fade-in">
+            <h2>Venue</h2>
+             <div class="venue-info">
+                <img src="https://placekitten.com/400/200" alt="Venue Image">
+                 <div class="venue-details">
+                     <p><strong>Venue Name:</strong> Conference Center</p>
+                    <p><strong>Address:</strong> 123 Main Street, City, State, Country</p>
+                     <p> <a href="https://maps.google.com" target="_blank">Open in Google Maps</a></p>
+                    <p><strong>Description:</strong> A state-of-the-art venue perfect for large conferences. With multiple halls, exhibition space, and excellent facilities, it's the ideal place for AI Community Day.</p>
+                 </div>
+            </div>
+        </section>
+        
+        <div class="call-to-actions">
+             <a href="#">Call for Speakers</a>
+            <a href="#">Call for Volunteers</a>
+            <a href="#">Call for Sponsors</a>
+        </div>
+    </div>
+
+    <script>
+      function handleScroll() {
+            const elements = document.querySelectorAll('.fade-in');
+            elements.forEach(el => {
+                const rect = el.getBoundingClientRect();
+                const isVisible = rect.top < window.innerHeight * 0.8;
+                el.classList.toggle('visible', isVisible);
+            });
+        }
+
+        window.addEventListener('scroll', handleScroll);
+        window.addEventListener('DOMContentLoaded', handleScroll);
+
+    </script>
 </body>
 </html>
